@@ -5,6 +5,7 @@
 """
 
 from cryptography_algebra import convert_sentence_to_np_array_of_numbers, convert_np_array_numbers_to_sentence, maintain_length_of_keyword_with_plaintext
+# from genetic_algorithm import run_genetic_algorithm
 
 def encrypt(plaintext, keyword):
     """
@@ -32,8 +33,8 @@ def decrypt(ciphertext, keyword):
     decrypt_vigenere_cipher = (ciphertext_in_numbers - keyword_in_numbers) % 26
     return convert_np_array_numbers_to_sentence(decrypt_vigenere_cipher)
 
-def crack(ciphertext):
-    pass
+# def crack(ciphertext, keylength, number_of_generations):
+#     return run_genetic_algorithm(keylength, number_of_generations, ciphertext, mutation_rate=0.2)
 
 if __name__ == '__main__':
     # print(encrypt("dCode Vigenere automatically", "KEY"))
