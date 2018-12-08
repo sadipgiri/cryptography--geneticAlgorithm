@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Genetic Algorithm to break Vigenere Cipher</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <div class="container">
+        <div class="bs-docs-section">
+          <form action="/" method="GET">
+            <button type="submit" class="btn btn-primary">HOME</button>
+          </form>
+          <br>
+          <br>
+          <h1 id="forms" class="page-header">Genetic Algorithm</h1>
+            <form role="form" action="/ga" method="POST">
+              <div class="form-group">  
+                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[2] }}" placeholder="Cipher Text">
+                 <span class="form-highlight"></span>
+                 <span class="form-bar"></span>
+                 <label for="outputC"></label>        
+              </div>
+              <div class="form-group">
+                <input type="textarea" class="form-control" id="inputC" name="key_length" placeholder="Key Length">
+                <span class="form-highlight"></span>
+                <span class="form-bar"></span>
+                <label class="float-label" for="inputC"></label>
+              </div>
+              <div class="form-group">
+                <input type="textarea" class="form-control" id="inputC" name="generations" placeholder="Number of Generations">
+                <span class="form-highlight"></span>
+                <span class="form-bar"></span>
+                <label class="float-label" for="inputC"></label>
+              </div>
+                <div class="select">
+                        <div class="btn">
+                                <button type="submit" class="btn btn-primary">CRACK</button>
+                        </div>
+                </div>
+              </div>
+            </form>
+            {% if data %}
+                <p><strong> Decrypted Message: {{data[0]}}</strong></p>
+                After Every 5th Generations:
+                <br>
+                {% for i in data[1] %}
+                    <p>{{i}}</p>
+                {% endfor %}
+            {% endif %}
+          </div>
+  </body>
+</html>

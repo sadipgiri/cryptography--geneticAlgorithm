@@ -20,6 +20,11 @@
       
     <div class="container">
         <div class="bs-docs-section">
+          <form action="/" method="GET">
+            <button type="submit" class="btn btn-primary">HOME</button>
+          </form>
+          <br>
+          <br>
           <h1 id="forms" class="page-header">Vigenere Cipher</h1>
             <form role="form" action="/vigenere" method="POST">
               <div class="form-group">
@@ -29,11 +34,13 @@
                 <label class="float-label" for="inputC"></label>
               </div>
               <div class="form-group">  
-                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[1] }}" placeholder="Plain Text">
+                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[1] }}" placeholder="Cipher Text">
                  <span class="form-highlight"></span>
                  <span class="form-bar"></span>
                  <label for="outputC"></label>        
               </div>
+              <input type="textarea" class="form-control" id="inputC" name="keyword" placeholder="Keyword">
+
                 <div class="select">
                         <div class="btn">
                                 <button type="submit" class="btn btn-primary">GO</button>
@@ -43,7 +50,6 @@
                         <option value="Decrypt">Decrypt</option>
                         <option value="Crack">Crack</option>
                     </select>
-                <input type="textarea" class="form-control" id="inputC" name="keyword" placeholder="Keyword">
                 </div>
               </div>
             </form>

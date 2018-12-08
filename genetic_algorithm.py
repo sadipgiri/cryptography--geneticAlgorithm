@@ -65,7 +65,7 @@ def mutation(parent_1, parent_2):
 def fitness_score(decrypted_text):
     return fitness.score(decrypted_text.replace(' ', '').upper())
 
-def run_genetic_algorithm(key_length, number_of_generations, cipher_text, mutation_rate=0.2):
+def run_genetic_algorithm(key_length, cipher_text, number_of_generations=100, mutation_rate=0.2):
     """
         initialize by generating random keys with given key length
         sort the random keys
@@ -73,6 +73,7 @@ def run_genetic_algorithm(key_length, number_of_generations, cipher_text, mutati
             - apply crossover, mutation, sort top keys
         finally return decrypted text using that top 1 sorted key with highest fitness score
     """
+    some_keywords_list = []
     lst = generate_random_keys(number_of_keys=7000, key_length=key_length)
     sorted_keywords = top_suitable_keywords(number_of_items=600, keywords_with_fitness_scores=keywords_and_suitability_score(lst, cipher_text))
     for m in range(number_of_generations):
@@ -80,8 +81,10 @@ def run_genetic_algorithm(key_length, number_of_generations, cipher_text, mutati
         keywords_pairs = crossover_and_certain_percent_mutation(keywords_pairs,mutation_percent=mutation_rate)
         lst = keywords_pairs.flatten()
         sorted_keywords = top_suitable_keywords(number_of_items=30, keywords_with_fitness_scores=keywords_and_suitability_score(lst, cipher_text))
+        if m % 5 == 0:
+            some_keywords_list.append(sorted_keywords)
         print(sorted_keywords)
-    return decrypt(cipher_text, keyword=sorted_keywords[0])
+    return [decrypt(cipher_text, keyword=sorted_keywords[0]), some_keywords_list]
 
 def keywords_and_suitability_score(keywords, cipher_text):
     """

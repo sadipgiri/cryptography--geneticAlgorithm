@@ -20,6 +20,11 @@
       
     <div class="container">
         <div class="bs-docs-section">
+          <form action="/" method="GET">
+            <button type="submit" class="btn btn-primary">HOME</button>
+          </form>
+          <br>
+          <br>
           <h1 id="forms" class="page-header">Ceasar Shift</h1>
             <form role="form" action="/caesar" method="POST">
               <div class="form-group">
@@ -29,7 +34,7 @@
                 <label class="float-label" for="inputC"></label>
               </div>
               <div class="form-group">  
-                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[2] }}" placeholder="Plain Text">
+                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[2] }}" placeholder="Cipher Text">
                  <span class="form-highlight"></span>
                  <span class="form-bar"></span>
                  <label for="outputC"></label>        
