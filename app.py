@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
     create flask app for Caesar & Vigenere ciphers and their cryptanalysis using GA (Genetic Algorithm)
     Author: Sadip Giri (sadipgiri@bennington.edu)
@@ -57,4 +59,4 @@ def ga():
     return render_template('genetic_algo.html')    
 
 if __name__ == '__main__':
-	app.run(debug = True)  
+	app.run()  
