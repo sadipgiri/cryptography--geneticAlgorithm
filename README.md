@@ -13,17 +13,6 @@ To run the program, simply run the app.py file
 
 ./app.py
 
-### Or Getting started using Docker
-
-Run Docker on your local machine
-
-Go to the root of project directory using command line 
-Build the docker image for the api using
-- docker build -t “give_name e.g. sadip/crypto:latest” .
-
-After the build is successful, run the docker conainer using 
-- docker run -p <requested_port>:<re-directed_port> "given_name e.g. sadip/crypto:latest"
-
 ### Author
 
 * **<a href="https://sadipgiri.github.io">Sadip Giri</a>** - (sadipgiri@bennington.edu)
@@ -37,3 +26,4 @@ Feel free to contact me or open a ticket (PRs are always welcome!) with any ques
 This project is licensed under the terms of the MIT license.
 
 ### Findings
+The project description along with results at <a href='https://github.com/sadipgiri/cryptography--geneticAlgorithm/blob/master/Poster%20Cryptography%20GA.pdf'>Poster</a>.
