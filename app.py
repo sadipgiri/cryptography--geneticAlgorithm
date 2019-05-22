@@ -19,6 +19,9 @@ def index():
 
 @app.route('/caesar', methods=['GET', 'POST'])
 def caesar():
+    '''
+        render respective templates along with function calls for respective encryption, decryption & cracking for Caesar Cipher.
+    '''
     if request.method == 'POST':
         plain_text = request.form['plain_text']
         cipher_text = request.form['cipher_text']
@@ -34,6 +37,9 @@ def caesar():
 
 @app.route('/vigenere', methods=['GET', 'POST'])
 def vigenere():
+    '''
+        Approach: same as that of Caesar cipher listed above.
+    '''
     if request.method == 'POST':
         plain_text = request.form['plain_text']
         cipher_text = request.form['cipher_text']
@@ -49,6 +55,9 @@ def vigenere():
 
 @app.route('/ga', methods=['GET','POST'])
 def ga():
+    '''
+        render template and crack crypto system depending on choice of ciphers such as Caesar Cipher or Vigenere ciphers in our case!
+    '''
     if request.method == 'POST':
         cipher_text = request.form['cipher_text']
         key_length = int(request.form['key_length'])
